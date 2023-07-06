@@ -6,7 +6,6 @@ class ListsController < ApplicationController
 
   def index
     @lists = List.all
-    
   end
 
   def edit
@@ -14,6 +13,7 @@ class ListsController < ApplicationController
   end
 
   def show
+    byebug
     @list = List.find(params[:id])
   end
 
@@ -31,6 +31,7 @@ class ListsController < ApplicationController
     if @list.save
       redirect_to list_path(@list.id)
     else
+      @lists = List.all
       render :index
     end
   end
