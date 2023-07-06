@@ -13,7 +13,6 @@ class ListsController < ApplicationController
   end
 
   def show
-    byebug
     @list = List.find(params[:id])
   end
 
